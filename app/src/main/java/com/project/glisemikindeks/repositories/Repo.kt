@@ -1,4 +1,4 @@
-package com.project.glisemikindeks
+package com.project.glisemikindeks.repositories
 
 import androidx.lifecycle.MutableLiveData
 

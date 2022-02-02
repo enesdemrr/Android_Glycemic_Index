@@ -7,6 +7,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
+import androidx.core.content.contentValuesOf
 import com.project.glisemikindeks.model.CategoryModel
 import com.project.glisemikindeks.model.Food
 import com.project.glisemikindeks.service.Service
@@ -122,18 +123,31 @@ class DBHelper(context:Context,name:String = "food.db", factory: SQLiteDatabase.
         }
         return ctList
     }
-    fun deleteFood(fID:Int){
+    fun deleteFood(fID:Int) :Int{
         val write = this.writableDatabase
-        val cursor = write.delete("Foods","ID ="+fID,null)
+        val count = write.delete("Foods","ID ="+fID,null)
+        return count
     }
-    fun deleteCat(cID:Int){
+    fun deleteCat(cID:Int):Int{
         val write = this.writableDatabase
-        val cursor = write.delete("Category","ID ="+cID,null)
+        val count = write.delete("Category","ID ="+cID,null)
+        return count
     }
-    fun updateFood(){
+    fun updateFood(fID: Int,Name:String,glysemic:String,carbohydrate:String,cal:String,catID:String): Int {
+        val write = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put("Name",Name)
+        contentValues.put("glysemic",glysemic)
+        contentValues.put("carbohydrate",carbohydrate)
+        contentValues.put("cal",cal)
+        contentValues.put("catID",catID)
+        return write.update("Foods",contentValues,"ID = ?", arrayOf(fID.toString()))
 
     }
-    fun updateCat(){
-
+    fun updateCat(cID: Int,Name: String): Int {
+        val write = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put("Name",Name)
+        return write.update("Category",contentValues,"ID =?", arrayOf(cID.toString()))
     }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.project.glisemikindeks.db.DBHelper
+import com.project.glisemikindeks.repositories.Repo
 import com.project.glisemikindeks.service.Service
 
 class SplashScreen : AppCompatActivity() {

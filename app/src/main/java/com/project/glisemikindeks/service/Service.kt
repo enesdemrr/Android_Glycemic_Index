@@ -1,18 +1,11 @@
 package com.project.glisemikindeks.service
 
 import android.content.Context
-import android.util.Log
-import androidx.core.text.isDigitsOnly
-import androidx.loader.content.AsyncTaskLoader
-import com.project.glisemikindeks.Repo
-import com.project.glisemikindeks.Repositores
+import com.project.glisemikindeks.repositories.Repo
 import com.project.glisemikindeks.db.DBHelper
-import com.project.glisemikindeks.model.Food
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
-import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
-import kotlin.concurrent.thread
 
 class Service(context: Context) {
     val url =

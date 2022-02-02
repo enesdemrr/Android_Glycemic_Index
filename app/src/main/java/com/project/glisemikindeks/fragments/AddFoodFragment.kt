@@ -8,6 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.navigation.fragment.findNavController
+import com.project.glisemikindeks.R
 import com.project.glisemikindeks.databinding.FragmentAddFoodBinding
 import com.project.glisemikindeks.db.DBHelper
 import com.project.glisemikindeks.model.CategoryModel
@@ -19,8 +22,8 @@ class AddFoodFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?{
-        val db = DBHelper(requireContext())
         _binding = FragmentAddFoodBinding.inflate(inflater,container,false)
+        val db = DBHelper(requireContext())
         nameCheck()
         calCheck()
         glyCheck()
@@ -34,7 +37,8 @@ class AddFoodFragment : Fragment() {
         allCategories.forEach {
             list.add(it.ID.toString()+"-${it.name}")
         }
-        
+
+
         val autoComplate : ArrayAdapter<String> = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_dropdown_item,list)
         binding.autoCompleteCat.setAdapter(autoComplate)
         return binding.root
