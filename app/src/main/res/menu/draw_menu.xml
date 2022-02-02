@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn ="navigation_view">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Tum Besinler"/>
+    <item
+        android:id="@+id/nav_cat"
+        android:icon="@drawable/ic_baseline_add_box_24"
+        android:title="Kategori Ekle"/>
+    <item
+        android:id="@+id/nav_item"
+        android:icon="@drawable/ic_baseline_add_circle_outline_24"
+        android:title="Besin Ekle"/>
+    <item
+        android:id="@+id/nav_dark"
+        android:icon="@drawable/ic_baseline_dark_mode_24"
+        android:title="Gece Modu"/>
+</menu>
