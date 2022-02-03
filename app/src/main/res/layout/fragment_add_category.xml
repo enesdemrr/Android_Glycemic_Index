@@ -24,8 +24,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
-        android:hint="Kategori Secin"
-        app:helperText="Gerekli"
+        android:hint="Kategori Seçin"
+        app:helperText="Gerekli**"
         app:helperTextTextColor="#FF0000"
         app:layout_constraintBottom_toTopOf="@id/textCategoryLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,6 +36,7 @@
         <AutoCompleteTextView
             android:id="@+id/autoCompleteCat"
             android:layout_width="match_parent"
+            android:fontFamily="@font/allerta"
             android:layout_height="match_parent"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -43,13 +44,12 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textCategoryLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        Of="parent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:hint="Yeni Kategori Adi"
+        android:hint="Yeni Kategori Adı"
         app:helperText="Gerekli**"
         app:helperTextTextColor="#FF0000"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,6 +59,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etCategory"
+            android:fontFamily="@font/allerta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -66,10 +67,12 @@
 
     <Button
         android:id="@+id/btnCatSave"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:fontFamily="@font/allerta"
         android:text="Kaydet"
+        android:background="@drawable/button_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

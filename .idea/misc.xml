@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/drawable-v24/circlered.xml" value="0.1" />
         <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/drawable-v24/circleyellow.xml" value="0.1" />
+        <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/drawable/button_shape.xml" value="0.115" />
         <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/drawable/circle.xml" value="0.1" />
         <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/drawable/et_background.xml" value="0.1" />
         <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/drawable/ic_baseline_dark_mode_24.xml" value="0.104" />
@@ -19,7 +20,7 @@
         <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/layout/fragment_add_category.xml" value="0.264" />
         <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/layout/fragment_add_food.xml" value="0.19230769230769232" />
-        <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/layout/fragment_main.xml" value="0.2" />
+        <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/layout/fragment_main.xml" value="0.25" />
         <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/layout/item_food.xml" value="0.264" />
         <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/layout/nav_head.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/GlisemikIndeks/app/src/main/res/layout/nav_header_main.xml" value="0.1" />

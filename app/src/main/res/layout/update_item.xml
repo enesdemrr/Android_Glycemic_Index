@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:layout_margin ="20dp"
-    >
+    android:layout_margin ="20dp">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -14,50 +13,46 @@
         android:background="@drawable/shape_background">
         <TextView
             android:text="Besin Guncelle"
-            android:textStyle="bold"
             android:gravity="center"
             android:textSize="20sp"
-            android:background="@color/design_default_color_primary"
+            android:background="#3EB489"
             android:textColor="@color/white"
             android:layout_margin="20dp"
+            android:fontFamily="@font/allerta"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/etUpName"
             android:hint="Besin Adi"
-            android:textColor="@color/design_default_color_primary"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/allerta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/etUpGly"
             android:hint="Glisemik Indeks"
             android:layout_marginTop="10dp"
-            android:textColor="@color/design_default_color_primary"
             android:textSize="20sp"
             android:inputType="numberDecimal"
-            android:textStyle="bold"
+            android:fontFamily="@font/allerta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/etUpCal"
             android:hint="Kalori"
             android:layout_marginTop="10dp"
-            android:textColor="@color/design_default_color_primary"
             android:textSize="20sp"
-            android:textStyle="bold"
             android:inputType="numberDecimal"
+            android:fontFamily="@font/allerta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/etUpKarb"
             android:hint="Karbonhidrat"
             android:layout_marginTop="10dp"
-            android:textColor="@color/design_default_color_primary"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/allerta"
             android:inputType="numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -73,6 +68,7 @@
             <AutoCompleteTextView
                 android:id="@+id/UpCat"
                 android:inputType="none"
+                android:fontFamily="@font/allerta"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         </com.google.android.material.textfield.TextInputLayout>

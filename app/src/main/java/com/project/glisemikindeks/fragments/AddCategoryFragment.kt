@@ -1,6 +1,8 @@
 package com.project.glisemikindeks.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +25,7 @@ class AddCategoryFragment : Fragment() {
         _binding = FragmentAddCategoryBinding.inflate(inflater,container,false)
         requireActivity().onBackPressedDispatcher.addCallback(callback)
         catCheck()
+        snipperCheck()
         binding.btnCatSave.setOnClickListener{
             saveCat()
         }
@@ -48,7 +51,8 @@ class AddCategoryFragment : Fragment() {
         val db = DBHelper(requireContext())
         val cat = db.returnCatId(binding.autoCompleteCat.text.toString())?.toInt()
         val catCheck = binding.textCategoryLayout.helperText == null
-        if (catCheck){
+        val spinnerCheck = binding.textSpinnerLayout.helperText == null
+        if (catCheck && spinnerCheck){
             val name = binding.etCategory.text.toString()
             try {
                 db.updateCat(cat!!,name)
@@ -61,23 +65,37 @@ class AddCategoryFragment : Fragment() {
         }
     }
 
-
-
-
     private fun catCheck() {
-        binding.etCategory.setOnFocusChangeListener { v, hasFocus ->
-            if (!hasFocus) {
-                binding.textCategoryLayout.helperText = validName()
+        binding.etCategory.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {
+                if(p0.toString() == ""){
+                    binding.textCategoryLayout.helperText = "Bos birakilamaz"
+                }
+                else{
+                    binding.textCategoryLayout.helperText = null
+                }
             }
-        }
+        })
     }
-    private fun validName(): String? {
-        val nameTxt = binding.etCategory.text.toString()
-        if (nameTxt.isEmpty()) {
-            return "Bos Birakilamaz"
-        }
-        return null
+
+    private fun snipperCheck() {
+        binding.autoCompleteCat.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {
+                if(p0.toString() == ""){
+                    binding.textSpinnerLayout.helperText = "Bos birakilamaz"
+                }
+                else{
+                    binding.textSpinnerLayout.helperText = null
+                }
+            }
+        })
     }
+
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

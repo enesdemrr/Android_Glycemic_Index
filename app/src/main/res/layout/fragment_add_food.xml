@@ -16,7 +16,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginTop="70dp"
         android:hint="Besin Maddesi"
-        app:helperText="Gerekli"
+        app:helperText="Gerekli**"
         app:helperTextTextColor="#FF0000"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +24,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etName"
             android:inputType="text"
+            android:fontFamily="@font/allerta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -39,7 +40,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginTop="20dp"
         android:hint="Glisemik indeks"
-        app:helperText="Gerekli"
+        app:helperText="Gerekli**"
         app:helperTextTextColor="#FF0000"
         app:layout_constraintTop_toBottomOf="@+id/textNameLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,6 +51,7 @@
             android:id="@+id/etGly"
             android:inputType="numberDecimal"
             android:layout_width="match_parent"
+            android:fontFamily="@font/allerta"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -61,7 +63,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="20dp"
-        app:helperText="Gerekli"
+        app:helperText="Gerekli**"
         app:helperTextTextColor="#FF0000"
         android:hint="Kalori"
         app:layout_constraintTop_toBottomOf="@id/textGlyLayout"
@@ -71,6 +73,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etCal"
             android:inputType="numberDecimal"
+            android:fontFamily="@font/allerta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -82,7 +85,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="20dp"
-        app:helperText="Gerekli"
+        app:helperText="Gerekli**"
         app:helperTextTextColor="#FF0000"
         android:hint="Karbonhidrat"
         app:layout_constraintTop_toBottomOf="@id/textCalLayout"
@@ -92,16 +95,20 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etKarb"
             android:inputType="numberDecimal"
+            android:fontFamily="@font/allerta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/saveBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Kaydet"
+        android:background="@drawable/button_shape"
+
+        android:fontFamily="@font/allerta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -114,7 +121,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        app:helperText="Gerekli"
+        app:helperText="Gerekli**"
         app:helperTextTextColor="#FF0000"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="20dp"
@@ -126,18 +133,11 @@
         <AutoCompleteTextView
             android:id="@+id/autoCompleteCat"
             android:inputType="none"
+            android:fontFamily="@font/allerta"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/saveBtn"
-        app:layout_constraintStart_toStartOf="@+id/saveBtn"
-        app:layout_constraintTop_toBottomOf="@+id/saveBtn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

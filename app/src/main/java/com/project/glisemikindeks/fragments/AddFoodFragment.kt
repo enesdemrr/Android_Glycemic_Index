@@ -1,6 +1,8 @@
 package com.project.glisemikindeks.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -74,84 +76,78 @@ class AddFoodFragment : Fragment() {
         }
     }
     private fun nameCheck() {
-        binding.etName.setOnFocusChangeListener { v, hasFocus ->
-            if (!hasFocus) {
-                binding.textNameLayout.helperText = validName()
+        binding.etName.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {
+                if(p0.toString() == ""){
+                    binding.textNameLayout.helperText = "Bos birakilamaz"
+                }
+                else{
+                    binding.textNameLayout.helperText = null
+                }
             }
-        }
-    }
-    private fun validName(): String? {
-        val nameTxt = binding.etName.text.toString()
-        if (nameTxt.isEmpty()) {
-            return "Gecersiz Kalori"
-        }
-        return null
+        })
     }
 
     private fun calCheck() {
-        binding.etCal.setOnFocusChangeListener { v, hasFocus ->
-            if (!hasFocus) {
-                binding.textCalLayout.helperText = validCal()
+        binding.etCal.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {
+                if(p0.toString() == ""){
+                    binding.textCalLayout.helperText = "Bos birakilamaz"
+                }
+                else{
+                    binding.textCalLayout.helperText = null
+                }
             }
-        }
+        })
     }
-
-    private fun validCal(): String? {
-        val calTxt = binding.etGly.text.toString()
-        if (calTxt.isEmpty()) {
-            return "Bos Birakilamaz"
-        }
-        return null
-    }
-
     private fun glyCheck() {
-        binding.etGly.setOnFocusChangeListener { v, hasFocus ->
-            if (!hasFocus) {
-                binding.textGlyLayout.helperText = validGly()
+        binding.etGly.addTextChangedListener(object :TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {
+                if(p0.toString() == ""){
+                    binding.textGlyLayout.helperText = "Bos birakilamaz"
+                }
+                else{
+                    binding.textGlyLayout.helperText= null
+                }
             }
-        }
+        })
     }
-
-    private fun validGly(): String? {
-        val glyTxt = binding.etGly.text.toString()
-        if (glyTxt.isEmpty()) {
-            return "Bos Birakilamaz"
-        }
-        return null
-    }
-
     private fun karbCheck() {
-        binding.etKarb.setOnFocusChangeListener { v, hasFocus ->
-            if (!hasFocus) {
-                binding.textKarbLayout.helperText = validKarb()
+        binding.etKarb.addTextChangedListener(object :TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {
+                if(p0.toString() == ""){
+                    binding.textKarbLayout.helperText = "Bos birakilamaz"
+                }
+                else{
+                    binding.textKarbLayout.helperText= null
+                }
             }
-        }
-    }
 
-    private fun validKarb(): String? {
-        val karbTxt = binding.etKarb.text.toString()
-        if (karbTxt.isEmpty()) {
-            return "Bos Birakilamaz"
-        }
-        return null
+        })
     }
 
     private fun snipperCheck() {
-        binding.autoCompleteCat.setOnFocusChangeListener { v, hasFocus ->
-            if (!hasFocus) {
-                binding.textSpinnerLayout.helperText = validSnipper()
+        binding.autoCompleteCat.addTextChangedListener(object :TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {
+                if(p0.toString() == ""){
+                    binding.textSpinnerLayout.helperText = "Bos birakilamaz"
+                }
+                else{
+                    binding.textSpinnerLayout.helperText = null
+                }
             }
-        }
+        })
     }
-
-    private fun validSnipper(): String? {
-        val snipperTxt = binding.autoCompleteCat.text.toString()
-        if (snipperTxt.isEmpty()) {
-            return "Bos Birakilamaz"
-        }
-        return null
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

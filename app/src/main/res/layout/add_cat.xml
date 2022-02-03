@@ -14,10 +14,10 @@
         android:background="@drawable/shape_background">
         <TextView
             android:text="Kategori Ekle"
-            android:textStyle="bold"
+            android:fontFamily="@font/allerta"
             android:gravity="center"
             android:textSize="20sp"
-            android:background="@color/design_default_color_primary"
+            android:background="#3EB489"
             android:textColor="@color/white"
             android:layout_margin="20dp"
             android:layout_gravity="center"
@@ -25,10 +25,9 @@
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/etCatNewName"
-            android:hint="Kategori Adi"
-            android:textColor="@color/design_default_color_primary"
+            android:hint="Kategori Adı"
+            android:fontFamily="@font/allerta"
             android:textSize="20sp"
-            android:textStyle="bold"
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -42,6 +43,14 @@ class MainActivity : AppCompatActivity() {
                    changeAddCategory()
                    bind.drawerLayout.closeDrawer(GravityCompat.START)
                }
+                R.id.nav_dark->{
+                    delegate.localNightMode=AppCompatDelegate.MODE_NIGHT_YES
+                    bind.drawerLayout.closeDrawer(GravityCompat.START)
+                }
+                R.id.nav_day->{
+                    delegate.localNightMode=AppCompatDelegate.MODE_NIGHT_NO
+                    bind.drawerLayout.closeDrawer(GravityCompat.START)
+                }
             }
             true
         }

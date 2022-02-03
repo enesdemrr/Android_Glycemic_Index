@@ -23,9 +23,10 @@
         <TextView
             android:id="@+id/tvName"
             android:layout_width="190dp"
-            android:layout_height="24dp"
+            android:layout_height="30dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/allerta"
             android:text="TextView"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -41,6 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:fontFamily="@font/allerta"
             android:layout_marginTop="20dp"
             android:text="Glisemik Indeks"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,6 +56,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/circle"
+            android:fontFamily="@font/allerta"
             android:gravity="center"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="@+id/textView3"
@@ -66,7 +69,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/allerta"
             android:text="Kalori :"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvName" />
@@ -76,22 +80,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/allerta"
             android:text="Karbonhidrat :"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvCal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/allerta"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/tvName"
-            app:layout_constraintVertical_bias="0.487" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvKarb"
@@ -99,6 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="2dp"
+            android:fontFamily="@font/allerta"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView5"
