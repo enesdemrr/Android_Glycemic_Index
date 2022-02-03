@@ -17,8 +17,8 @@ class DBHelper(context:Context,name:String = "food.db", factory: SQLiteDatabase.
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.execSQL("CREATE TABLE \"Category\" (\n" +
                 "\t\"ID\"\tINTEGER,\n" +
-                "\t\"Name\"\tTEXT,\n" +
-                "\tPRIMARY KEY(\"ID\"AUTOINCREMENT)\n" +
+                "\t\"Name\"\tTEXT UNIQUE,\n" +
+                "\tPRIMARY KEY(\"ID\" AUTOINCREMENT)\n" +
                 ");")
         db!!.execSQL("CREATE TABLE \"Foods\" (\n" +
                 "\t\"ID\"\tINTEGER,\n" +
@@ -93,7 +93,7 @@ class DBHelper(context:Context,name:String = "food.db", factory: SQLiteDatabase.
         }
         return  allFood
     }
-    fun getCatFood(catid: Int):ArrayList<Food>{
+    fun getCatFood(catid: String):ArrayList<Food>{
         var allFood = ArrayList<Food>()
         val read = this.readableDatabase
         val quertFood = "select * from Foods where catID=$catid"
@@ -128,11 +128,27 @@ class DBHelper(context:Context,name:String = "food.db", factory: SQLiteDatabase.
         val count = write.delete("Foods","ID ="+fID,null)
         return count
     }
-    fun deleteCat(cID:Int):Int{
+    fun deleteFoodCat(cId:String) :Int{
         val write = this.writableDatabase
-        val count = write.delete("Category","ID ="+cID,null)
+        val count = write.delete("Foods","catID ="+cId,null)
         return count
     }
+    fun deleteCat(cID:Int):Int{
+        val write = this.writableDatabase
+        val count = write.delete("Category","ID ="+cID, null)
+        return count
+    }
+   fun returnCatId(CName:String): String? {
+       val read = this.readableDatabase
+       val queryCat = "select * from Category where Name= ?"
+       val cursor = read.rawQuery(queryCat, arrayOf(CName)).use {
+           if (it.moveToFirst()){
+               val catId = it.getInt(0).toString()
+               return catId
+           }
+       }
+       return null
+   }
     fun updateFood(fID: Int,Name:String,glysemic:String,carbohydrate:String,cal:String,catID:String): Int {
         val write = this.writableDatabase
         val contentValues = ContentValues()

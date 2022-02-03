@@ -2,46 +2,51 @@ package com.project.glisemikindeks.fragments
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
 import com.project.glisemikindeks.R
 import com.project.glisemikindeks.databinding.FragmentAddFoodBinding
 import com.project.glisemikindeks.db.DBHelper
-import com.project.glisemikindeks.model.CategoryModel
+import java.util.*
 import kotlin.collections.ArrayList
 
 
 class AddFoodFragment : Fragment() {
     private var _binding : FragmentAddFoodBinding? = null
     private val binding get() = _binding!!
-
+    val list = ArrayList<String>()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?{
         _binding = FragmentAddFoodBinding.inflate(inflater,container,false)
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
         val db = DBHelper(requireContext())
         nameCheck()
         calCheck()
         glyCheck()
         karbCheck()
         snipperCheck()
+        val allCategories = db.getCat()
+        allCategories.forEach {
+            list.add(it.name)
+        }
         binding.saveBtn.setOnClickListener {
             saveCheck()
         }
-        val list = ArrayList<String>()
-        val allCategories = db.getCat()
-        allCategories.forEach {
-            list.add(it.ID.toString()+"-${it.name}")
-        }
-
 
         val autoComplate : ArrayAdapter<String> = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_dropdown_item,list)
         binding.autoCompleteCat.setAdapter(autoComplate)
         return binding.root
+    }
+    val callback = object : OnBackPressedCallback(true){
+        override fun handleOnBackPressed() {
+            val fragment  = parentFragmentManager.beginTransaction()
+            fragment.replace(R.id.layoutFrg,MainFragment())
+            fragment.commit()
+        }
     }
 
 
@@ -57,7 +62,7 @@ class AddFoodFragment : Fragment() {
             val gly = binding.etGly.text.toString()
             val cal = binding.etCal.text.toString()
             val karb = binding.etKarb.text.toString()
-            val cat = binding.autoCompleteCat.text[0].toString()
+            val cat = db.returnCatId(binding.autoCompleteCat.text.toString()).toString()
             try {
                 db.addFood(name,gly,karb,cal,cat)
                 Toast.makeText(requireContext(), "Urun Basariyla Kayit Edildi", Toast.LENGTH_SHORT).show()

@@ -28,7 +28,6 @@ class DBAdapter(val foodArr:ArrayList<Food>):RecyclerView.Adapter<DBAdapter.View
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val db = DBHelper(holder.bind.root.context)
         val food = foodArr.get(position)
-        val repo = Repositores()
         holder.bind.apply {
             tvName.text = food.name
             tvCal.text = food.cal
@@ -89,6 +88,15 @@ class DBAdapter(val foodArr:ArrayList<Food>):RecyclerView.Adapter<DBAdapter.View
                 alert.show()
                 notifyDataSetChanged()
             }
+        }
+        if(food.glysemic.toInt()<50){
+            holder.bind.tvGly
+        }
+        else if(food.glysemic.toInt()<70){
+
+        }
+        else{
+
         }
     }
 

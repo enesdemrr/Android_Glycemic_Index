@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".fragments.MainFragment">
 
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/etSearch"
+        android:ems="10"
+        android:focusableInTouchMode="true"
+        android:background="@drawable/et_background"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:hint="Ara.."
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcyFood"
         android:layout_width="0dp"
@@ -26,5 +43,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/etSearch" />
 </androidx.constraintlayout.widget.ConstraintLayout>

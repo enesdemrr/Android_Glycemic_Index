@@ -10,28 +10,52 @@
         android:id="@+id/imageView"
         android:layout_width="215dp"
         android:layout_height="245dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/cat_img"
-        app:layout_constraintBottom_toTopOf="@+id/textCategoryLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textSpinnerLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Kategori Secin"
+        app:helperText="Gerekli"
+        app:helperTextTextColor="#FF0000"
+        app:layout_constraintBottom_toTopOf="@id/textCategoryLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteCat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textCategoryLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        Of="parent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:hint="Kategori Adi"
+        android:hint="Yeni Kategori Adi"
         app:helperText="Gerekli**"
         app:helperTextTextColor="#FF0000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/textSpinnerLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etCategory"
@@ -45,9 +69,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Button"
+        android:text="Kaydet"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textCategoryLayout" />
+        app:layout_constraintTop_toBottomOf="@id/textCategoryLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
