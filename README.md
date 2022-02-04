@@ -9,11 +9,14 @@ Patients can easily control the glycemic index of nutrients.
 
   
 ## Secreenshot
-<a href="https://github.com/enesdemrr/GlisemikIndeks/blob/master/app_image/1.png" target="_blank">
+<p>
+  <a href="https://github.com/enesdemrr/GlisemikIndeks/blob/master/app_image/1.png" target="_blank">
     <img src="https://github.com/enesdemrr/GlisemikIndeks/blob/master/app_image/1.png" width="200" style="max-width:100%;"></a>
   <a href="https://github.com/enesdemrr/GlisemikIndeks/blob/master/app_image/2.png" target="_blank">
     <img src="https://github.com/enesdemrr/GlisemikIndeks/blob/master/app_image/2.png" width="200" style="max-width:100%;"></a>
   <a href="https://github.com/enesdemrr/GlisemikIndeks/blob/master/app_image/3.png" target="_blank">
+ </p>
+  <p>
     <img src="https://github.com/enesdemrr/GlisemikIndeks/blob/master/app_image/3.png" width="200" style="max-width:100%;"></a>
   <a href="https://github.com/enesdemrr/GlisemikIndeks/blob/master/app_image/4.png" target="_blank">
     <img src="https://github.com/enesdemrr/GlisemikIndeks/blob/master/app_image/4.png" width="200" style="max-width:100%;"></a>
