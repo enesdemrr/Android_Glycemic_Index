@@ -7,13 +7,16 @@ import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.animation.content.Content
+import com.project.glisemikindeks.MainActivity
 import com.project.glisemikindeks.R
 import com.project.glisemikindeks.databinding.ItemFoodBinding
 import com.project.glisemikindeks.databinding.UpdateItemBinding
 import com.project.glisemikindeks.db.DBHelper
+import com.project.glisemikindeks.fragments.MainFragment
 import com.project.glisemikindeks.model.Food
 import com.project.glisemikindeks.repositories.Repositores
 

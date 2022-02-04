@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bind = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bind.root)
+        supportActionBar?.title = "Glisemik Indeks"
         val drawerLayout : DrawerLayout  = bind.drawerLayout
         changeFragmentMain()
         toogle = ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
