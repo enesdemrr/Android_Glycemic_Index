@@ -1,7 +1,7 @@
 # GlySemic Index
 
 This project aims to make it easier for diabetes patients to continue their lives. 
-Patients can easily control the glycemic index of nutrients.
+Patients can easily control the glycemic index of nutrients. The project was developed using Kotlin and SQLite. 
 
 ![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
